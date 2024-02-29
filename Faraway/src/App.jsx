@@ -14,7 +14,7 @@ function App() {
   <Head />
   <Input setitemsArray = {setItemsArray} items = {itemsArray}/>
   <Packagelist itemsArray={itemsArray} setItemsArray={setItemsArray} />
-  <Clear />
+  <Clear itemsArray={itemsArray} setItemsArray={setItemsArray}  />
   <Footer />
  </>
   )

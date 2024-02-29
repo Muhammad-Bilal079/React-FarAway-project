@@ -1,6 +1,12 @@
 import React from 'react'
 
-function Clear() {
+function Clear({itemsArray,setItemsArray}) {
+
+let clearItems = ()=>{
+  console.log('list cleared');
+  setItemsArray([]);
+
+}
   return (
     <div style={{
     backgroundColor:'brown',
@@ -20,6 +26,8 @@ function Clear() {
         }}
         >
                 <option value="">Sort by input order</option>
+                <option value="">Sort by Description</option>
+                <option value="">Sort by Packed status</option>
                
                 </select>
 
@@ -34,6 +42,7 @@ function Clear() {
                     cursor: 'pointer',
                    marginLeft:'14px',
                 }}
+                onClick={clearItems}
                 >Clear List</button>
     </div>
   )
