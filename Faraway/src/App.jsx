@@ -7,12 +7,12 @@ import Footer from './modules/Footer'
 
 function App() {
 
-  const[itemsArray , setItemsArray] = useState([])
-
+  let[itemsArray,setItemsArray] = useState([])
+  // console.log(setItemsArray(itemsArray));
   return (
  <>
   <Head />
-  <Input setitemsArray = {setItemsArray} items = {itemsArray}/>
+  <Input setitemsArray={setItemsArray} items = {itemsArray}/>
   <Packagelist itemsArray={itemsArray} setItemsArray={setItemsArray} />
   <Clear itemsArray={itemsArray} setItemsArray={setItemsArray}  />
   <Footer />

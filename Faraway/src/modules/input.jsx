@@ -12,7 +12,7 @@ function Input ({items , setitemsArray}) {
             name : itemname,
             packed: false,
         }
-        setitemsArray((prev) => [...prev , newData])
+        setitemsArray([...items , newData])
         // console.log('hello');
         console.log(items);
         setQuantity(1)  

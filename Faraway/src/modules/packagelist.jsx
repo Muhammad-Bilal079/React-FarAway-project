@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Packagelist({ itemsArray, setitemsArray }) {
+function Packagelist({ itemsArray, setItemsArray }) {
     return (
         <div style={{
             backgroundColor: 'brown',
@@ -17,15 +17,11 @@ function Packagelist({ itemsArray, setitemsArray }) {
                         key={indx}
                         singleItems={singleItem}
                         number={indx}
-                        setItemsArr={setitemsArray}
+                        setItemsArr={setItemsArray}
                         itemList={itemsArray} //yahan commentkarna hai
                     />
                 ))
             }
-
-
-
-
         </div>
     )
 }
@@ -34,12 +30,12 @@ export default Packagelist
 
 const Item = ({ singleItems, number, setItemsArr, itemList }) => {
 
-    const packedHandler = (packingValue, itemNumber) => {   //false
+    const packedHandler = (packingValue, number) => {   //false
         const allItems = [...itemList]
-        allItems[number].packed = !packingValue  //true
+        allItems[number].packed = !allItems[number].packed  //true
         setItemsArr(allItems)
     }
-
+    console.log(singleItems);
     return (
         <div style={{
             display: "flex",
@@ -52,7 +48,7 @@ const Item = ({ singleItems, number, setItemsArr, itemList }) => {
             width: 'auto',
             margin: "5px"
         }}>
-            <input type="checkbox" checked={singleItems.packed} onChange={() => packedHandler(singleItems.packed, number)} />
+            <input type="checkbox" checked={singleItems.packed} onChange={() => packedHandler(singleItems, number)} />
             
             <p style={{
                 color: "#dbc69b",
